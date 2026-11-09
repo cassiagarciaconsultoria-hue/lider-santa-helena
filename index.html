@@ -40,6 +40,7 @@ p{margin:0}
 #gate .brands{display:flex;align-items:center;gap:14px;margin-bottom:36px;flex-wrap:wrap}
 #gate .brands .sh{height:54px;border-radius:8px;background:#fff;padding:5px}
 #gate .brands .cg{height:40px}
+#gate .brands .ad{height:30px}
 #gate .brands .bar{width:1px;height:30px;background:rgba(255,255,255,.25)}
 #gate .kick{font:600 .74rem var(--body);letter-spacing:.16em;text-transform:uppercase;color:var(--orange)}
 #gate h2{color:#fff;font-size:2rem;margin-top:8px;font-weight:800}
@@ -229,6 +230,7 @@ td:first-child{font-weight:600;color:var(--ink)}
 footer{background:var(--ink);color:#B9CDBE;padding:36px 0;font-size:.9rem}
 footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center}
 footer .brands .cg{height:34px}
+footer .brands .ad{height:26px}
 footer a{color:#fff}
 
 @media (max-width:900px){
@@ -250,7 +252,10 @@ footer a{color:#fff}
   .mast-meta{display:none}
   .mast::after,.mast::before{display:none}
   .mod{padding:22px}
-  .brands .ad{display:none}
+  .brands{gap:10px;flex-wrap:wrap}
+  .brands .sh{height:44px}
+  .brands .cg{height:30px}
+  .brands .ad{height:24px}
 }
 @media print{.nav,#gate{display:none!important}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
@@ -264,6 +269,7 @@ footer a{color:#fff}
       <img class="sh" src="img/santa-helena.png" alt="Santa Helena">
       <span class="bar"></span>
       <img class="cg" src="img/cassia-branco.png" alt="Cássia Garcia Consultoria">
+      <img class="ad" src="img/ana-do-rh-branco.png" alt="Ana do RH">
     </div>
     <div class="kick">Acesso restrito · RH</div>
     <h2>Liderança Santa Helena</h2>
@@ -274,7 +280,7 @@ footer a{color:#fff}
       <button type="submit">Entrar</button>
     </form>
     <p class="msg" id="gate-msg" role="status"></p>
-    <p class="foot">Este portal reúne informações, resultados e materiais do programa de liderança e é de uso interno do RH da Santa Helena. Em caso de dúvida sobre o acesso, fale com a Cássia Garcia Consultoria.</p>
+    <p class="foot">Este portal reúne informações, resultados e materiais do programa de liderança e é de uso interno do RH da Santa Helena. Em caso de dúvida sobre o acesso, fale com a Cássia Garcia Consultoria ou com a Ana do RH.</p>
   </div>
 </div>
 
@@ -782,8 +788,8 @@ footer a{color:#fff}
 
 <footer>
   <div class="wrap">
-    <div class="brands"><img class="cg" src="img/cassia-branco.png" alt="Cássia Garcia Consultoria"></div>
-    <div>Cássia Garcia Consultoria · cassiagarciaconsultoria@gmail.com<br>Portal de uso interno do RH da Santa Helena · Atualizado em novembro de 2026</div>
+    <div class="brands"><img class="cg" src="img/cassia-branco.png" alt="Cássia Garcia Consultoria"><span class="bar"></span><img class="ad" src="img/ana-do-rh-branco.png" alt="Ana do RH"></div>
+    <div>Cássia Garcia Consultoria · Ana do RH®<br>cassiagarciaconsultoria@gmail.com<br>Portal de uso interno do RH da Santa Helena · Atualizado em novembro de 2026</div>
   </div>
 </footer>
 </div>
