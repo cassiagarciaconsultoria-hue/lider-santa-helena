@@ -1,0 +1,872 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Portal do Programa de Desenvolvimento da Liderança da Santa Helena — Cássia Garcia Consultoria.">
+<meta name="theme-color" content="#0E3B22">
+<title>Liderança Santa Helena</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<style>
+:root{
+  --ink:#0E3B22; --ink-2:#14492B;
+  --green:#00652D; --green-2:#2E7D4A; --green-wash:#E6F0E8;
+  --orange:#F0821E; --orange-d:#B85A07; --orange-wash:#FDEEDD;
+  --paper:#F7F4EC; --card:#FFFFFF; --line:#E2DCCB;
+  --fg:#1B2A20; --fg-2:#4D5B51; --fg-3:#7A857C;
+  --red:#B4412E; --red-wash:#F7E6E2;
+  --display:'Bricolage Grotesque', 'Segoe UI', sans-serif;
+  --body:'Source Sans 3', -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --r:12px;
+  --shadow:0 1px 2px rgba(14,59,34,.05), 0 10px 28px rgba(14,59,34,.07);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--fg);font-family:var(--body);font-size:16.5px;line-height:1.55;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+[hidden]{display:none!important}
+h1,h2,h3,h4{font-family:var(--display);margin:0;line-height:1.15;color:var(--ink)}
+p{margin:0}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+/* ---------- gate ---------- */
+#gate{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:32px 22px;overflow-y:auto;
+  background:radial-gradient(1200px 600px at 85% 110%, rgba(240,130,30,.28), transparent 60%), var(--ink)}
+#gate .box{width:100%;max-width:440px}
+#gate .brands{display:flex;align-items:center;gap:14px;margin-bottom:36px;flex-wrap:wrap}
+#gate .brands .sh{height:54px;border-radius:8px;background:#fff;padding:5px}
+#gate .brands .cg{height:40px}
+#gate .brands .bar{width:1px;height:30px;background:rgba(255,255,255,.25)}
+#gate .kick{font:600 .74rem var(--body);letter-spacing:.16em;text-transform:uppercase;color:var(--orange)}
+#gate h2{color:#fff;font-size:2rem;margin-top:8px;font-weight:800}
+#gate .lead{color:#C9D9CD;margin-top:10px}
+#gate form{display:flex;gap:9px;margin-top:24px;flex-wrap:wrap}
+#gate input{flex:1 1 200px;min-width:0;font:1rem var(--body);padding:12px 14px;border-radius:9px;border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.08);color:#fff}
+#gate input::placeholder{color:#8FAA96}
+#gate input:focus{outline:2px solid var(--orange);outline-offset:1px;border-color:transparent}
+#gate button{font:700 1rem var(--display);padding:12px 24px;border-radius:9px;border:0;background:var(--orange);color:#2A1500;cursor:pointer}
+#gate button:hover{filter:brightness(1.06)}
+#gate .msg{color:#F6B7A6;font-size:.9rem;margin-top:12px;min-height:1.3em}
+#gate .foot{color:#8FAA96;font-size:.82rem;margin-top:30px;padding-top:18px;border-top:1px solid rgba(255,255,255,.14)}
+
+/* ---------- masthead ---------- */
+.mast{background:var(--ink);color:#fff;position:relative;overflow:hidden}
+.mast::after{content:"";position:absolute;right:-120px;bottom:-160px;width:560px;height:360px;border-radius:50%;
+  border-top:26px solid var(--orange);transform:rotate(-12deg);opacity:.9;pointer-events:none}
+.mast::before{content:"";position:absolute;right:-160px;bottom:-200px;width:620px;height:400px;border-radius:50%;
+  border-top:10px solid rgba(255,255,255,.18);transform:rotate(-12deg);pointer-events:none}
+.mast-top{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 0;flex-wrap:wrap}
+.brands{display:flex;align-items:center;gap:14px}
+.brands .sh{height:52px;background:#fff;border-radius:8px;padding:5px}
+.brands .cg{height:38px}
+.brands .ad{height:30px}
+.brands .bar{width:1px;height:30px;background:rgba(255,255,255,.22)}
+.mast-meta{font-size:.85rem;color:#B9CDBE;text-align:right;line-height:1.45}
+.hero{padding:40px 0 64px;position:relative;z-index:1;max-width:760px}
+.kicker{font:700 .76rem var(--body);letter-spacing:.17em;text-transform:uppercase;color:var(--orange)}
+.hero h1{color:#fff;font-size:clamp(2.3rem,5.4vw,3.9rem);font-weight:800;letter-spacing:-.02em;margin-top:10px}
+.hero p{color:#D3E2D7;font-size:1.1rem;margin-top:16px;max-width:640px}
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;margin-top:34px;background:rgba(255,255,255,.14);border-radius:12px;overflow:hidden;max-width:820px}
+.facts div{background:var(--ink-2);padding:14px 16px}
+.facts dt{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:#9DB8A4}
+.facts dd{margin:4px 0 0;font:700 1.02rem var(--display);color:#fff}
+
+/* ---------- nav ---------- */
+.nav{position:sticky;top:0;z-index:20;background:rgba(247,244,236,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+.nav .wrap::-webkit-scrollbar{display:none}
+.nav button{flex:0 0 auto;font:600 .95rem var(--body);color:var(--fg-2);background:none;border:0;padding:16px 14px 14px;cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap}
+.nav button:hover{color:var(--ink)}
+.nav button[aria-selected=true]{color:var(--ink);border-bottom-color:var(--orange)}
+.nav button .num{display:inline-block;font:700 .7rem var(--display);background:var(--green-wash);color:var(--green);border-radius:5px;padding:1px 6px;margin-right:6px;vertical-align:1px}
+
+/* ---------- views ---------- */
+main{padding:46px 0 80px}
+.view{animation:fade .25s ease}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.vhead{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:end;margin-bottom:30px}
+.vhead h2{font-size:clamp(1.8rem,3.6vw,2.6rem);font-weight:800;letter-spacing:-.015em;margin-top:6px}
+.vhead p{color:var(--fg-2);margin-top:10px;max-width:720px;font-size:1.05rem}
+.kick-dark{font:700 .74rem var(--body);letter-spacing:.16em;text-transform:uppercase;color:var(--orange-d)}
+.badge{display:inline-flex;align-items:center;gap:6px;font:700 .8rem var(--body);padding:6px 12px;border-radius:99px;background:var(--green-wash);color:var(--green);white-space:nowrap}
+.badge.o{background:var(--orange-wash);color:var(--orange-d)}
+section{margin-top:44px}
+section > h3{font-size:1.35rem;font-weight:700;margin-bottom:6px}
+section > .sub{color:var(--fg-2);margin-bottom:18px;max-width:760px}
+.grid{display:grid;gap:16px}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px;box-shadow:var(--shadow)}
+.card h4{font-size:1.08rem;font-weight:700}
+.card p{color:var(--fg-2);margin-top:6px}
+.card ul{margin:10px 0 0;padding-left:18px;color:var(--fg-2)}
+.card li{margin:4px 0}
+.card.green{background:var(--green);border-color:var(--green);color:#fff}
+.card.green h4,.card.green p,.card.green li{color:#fff}
+.card.tint{background:var(--green-wash);border-color:#CFE1D3;box-shadow:none}
+.card.otint{background:var(--orange-wash);border-color:#F6D4AE;box-shadow:none}
+
+.stat{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px 20px 18px;box-shadow:var(--shadow)}
+.stat .v{font:800 2.5rem var(--display);color:var(--green);letter-spacing:-.02em;line-height:1}
+.stat .v small{font-size:1.1rem;font-weight:700;color:var(--fg-3);margin-left:2px}
+.stat .l{font-weight:600;margin-top:8px;color:var(--ink)}
+.stat .d{font-size:.88rem;color:var(--fg-3);margin-top:2px}
+.stat.o .v{color:var(--orange-d)}
+
+/* module cards on overview */
+.mod{position:relative;overflow:hidden;border-radius:16px;padding:28px;color:#fff;background:var(--green);min-height:270px;display:flex;flex-direction:column}
+.mod.two{background:var(--ink)}
+.mod .tag{font:700 .74rem var(--body);letter-spacing:.16em;text-transform:uppercase;color:#FFD3A8}
+.mod h3{color:#fff;font-size:1.9rem;font-weight:800;margin-top:6px}
+.mod .tl{color:#CFE3D5;margin-top:4px}
+.mod .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:18px}
+.mod .chips span{font-size:.84rem;padding:4px 10px;border-radius:99px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.18)}
+.mod .go{margin-top:auto;padding-top:22px}
+.mod .go button{font:700 .95rem var(--display);background:var(--orange);color:#2A1500;border:0;border-radius:9px;padding:10px 18px;cursor:pointer}
+.mod .num{position:absolute;right:16px;top:-14px;font:800 9rem var(--display);color:rgba(255,255,255,.07);line-height:1}
+
+/* timeline / agenda */
+.agenda{list-style:none;margin:0;padding:0;border-left:3px solid var(--line);margin-left:6px}
+.agenda li{position:relative;padding:0 0 18px 22px}
+.agenda li::before{content:"";position:absolute;left:-9px;top:5px;width:15px;height:15px;border-radius:50%;background:var(--paper);border:3px solid var(--green)}
+.agenda li.brk::before{border-color:var(--line)}
+.agenda li.brk{color:var(--fg-3)}
+.agenda .t{font:700 .88rem var(--display);color:var(--orange-d)}
+.agenda li.brk .t{color:var(--fg-3)}
+.agenda .n{font-weight:600}
+
+/* blocks */
+.block{display:grid;grid-template-columns:86px 1fr;gap:0;background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow)}
+.block + .block{margin-top:14px}
+.block .idx{background:var(--green);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:20px 0;gap:4px}
+.block .idx b{font:800 2rem var(--display);line-height:1}
+.block .idx small{font-size:.72rem;color:#CFE3D5;text-align:center;line-height:1.25}
+.block .body{padding:20px 24px}
+.block .body h4{font-size:1.25rem;font-weight:700}
+.block .msg{font-style:italic;color:var(--fg-2);margin-top:2px}
+.block .cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:14px}
+.block .cols h5{font:700 .74rem var(--body);letter-spacing:.13em;text-transform:uppercase;color:var(--orange-d);margin:0 0 6px}
+.block .cols ul{margin:0;padding-left:18px;color:var(--fg-2)}
+.block .cols li{margin:3px 0}
+
+/* bars */
+.bars{display:flex;flex-direction:column;gap:12px}
+.bar-row{display:grid;grid-template-columns:minmax(150px,230px) 1fr 70px;gap:12px;align-items:center}
+.bar-row .lab{font-weight:600;font-size:.95rem}
+.bar-row .track{height:14px;border-radius:99px;background:#EEE9DC;overflow:hidden}
+.bar-row .fill{height:100%;border-radius:99px;background:var(--green)}
+.bar-row .fill.o{background:var(--orange)}
+.bar-row .fill.g{background:#B9C2BB}
+.bar-row .val{font:700 .95rem var(--display);text-align:right;color:var(--ink)}
+.bar-row .val small{font:400 .8rem var(--body);color:var(--fg-3)}
+
+.split{display:flex;height:40px;border-radius:9px;overflow:hidden;margin-top:12px}
+.split div{display:flex;align-items:center;padding:0 12px;font:700 .88rem var(--display);color:#fff;white-space:nowrap;overflow:hidden}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:12px;font-size:.9rem;color:var(--fg-2)}
+.legend i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+
+/* quotes */
+.quotes{columns:3 280px;column-gap:16px}
+.quote{break-inside:avoid;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px 20px;margin:0 0 16px;box-shadow:var(--shadow)}
+.quote p{color:var(--fg);font-size:1rem}
+.quote p::before{content:"“";font:800 2rem var(--display);color:var(--orange);line-height:0;vertical-align:-.45em;margin-right:4px}
+.quote.crit{background:var(--orange-wash);border-color:#F6D4AE;box-shadow:none}
+.quote .who{font-size:.8rem;color:var(--fg-3);margin-top:8px;text-transform:uppercase;letter-spacing:.08em}
+
+/* perceptions */
+.perc{display:grid;grid-template-columns:240px 1fr;background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow)}
+.perc + .perc{margin-top:16px}
+.perc .side{background:var(--ink);color:#fff;padding:24px}
+.perc .side .tag{font:700 .72rem var(--body);letter-spacing:.15em;text-transform:uppercase;color:var(--orange)}
+.perc .side h4{color:#fff;font-size:1.4rem;margin-top:6px}
+.perc .side .lvl{margin-top:16px;font-size:.85rem;color:#B9CDBE}
+.perc .side .lvl b{display:block;color:#fff;font:700 1rem var(--display);margin-top:3px}
+.perc .main{padding:24px 26px}
+.perc .main p{color:var(--fg)}
+.perc .main p + p{margin-top:10px}
+.perc .ev{margin-top:16px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.perc .ev div{border-radius:10px;padding:12px 14px;font-size:.92rem;color:var(--fg-2)}
+.perc .ev div b{display:block;font:700 .72rem var(--body);letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px}
+.perc .ev .m1{background:var(--green-wash)} .perc .ev .m1 b{color:var(--green)}
+.perc .ev .ps{background:var(--orange-wash)} .perc .ev .ps b{color:var(--orange-d)}
+
+table{width:100%;border-collapse:collapse;font-size:.95rem}
+th{font:700 .74rem var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--fg-3);text-align:left;padding:10px 14px;border-bottom:2px solid var(--line)}
+td{padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top;color:var(--fg-2)}
+td:first-child{font-weight:600;color:var(--ink)}
+.tbl{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow-x:auto;box-shadow:var(--shadow)}
+
+/* profile */
+.animal{border-radius:var(--r);padding:20px;border:1px solid var(--line);background:var(--card)}
+.animal .q{font:700 .74rem var(--body);letter-spacing:.13em;text-transform:uppercase}
+.animal h4{font-size:1.3rem;margin-top:4px}
+.animal p{color:var(--fg-2);font-size:.93rem;margin-top:4px}
+.dots{display:flex;gap:5px;margin-top:14px}
+.dots i{width:100%;height:8px;border-radius:99px;background:#EEE9DC}
+.dots i.on{background:var(--green)}
+
+/* downloads */
+.files{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.file{display:flex;gap:16px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px 20px;text-decoration:none;color:inherit;box-shadow:var(--shadow);transition:border-color .15s, transform .15s}
+.file:hover{border-color:var(--orange);transform:translateY(-1px)}
+.file .ic{flex:0 0 46px;height:56px;border-radius:7px;background:var(--red-wash);color:var(--red);display:grid;place-items:center;font:800 .78rem var(--display);position:relative}
+.file .ic::after{content:"";position:absolute;top:0;right:0;border-width:0 12px 12px 0;border-style:solid;border-color:var(--paper) var(--paper) #E9C3BA #E9C3BA;border-radius:0 7px 0 3px}
+.file .tx{flex:1;min-width:0}
+.file .tx b{display:block;font:700 1.02rem var(--display);color:var(--ink)}
+.file .tx span{font-size:.88rem;color:var(--fg-3)}
+.file .dl{font:700 .85rem var(--body);color:var(--green);white-space:nowrap}
+.grp{font:700 .76rem var(--body);letter-spacing:.15em;text-transform:uppercase;color:var(--fg-3);margin:30px 0 12px}
+
+.note{font-size:.88rem;color:var(--fg-3);margin-top:14px}
+.note a{color:var(--green);font-weight:600}
+.pull{font:700 clamp(1.25rem,2.4vw,1.6rem)/1.3 var(--display);color:var(--ink);border-left:5px solid var(--orange);padding:6px 0 6px 20px;max-width:820px}
+
+footer{background:var(--ink);color:#B9CDBE;padding:36px 0;font-size:.9rem}
+footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center}
+footer .brands .cg{height:34px}
+footer a{color:#fff}
+
+@media (max-width:900px){
+  .g3,.g4{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .perc{grid-template-columns:1fr}
+  .vhead{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  .wrap{padding:0 18px}
+  .g2,.g3,.g4,.files{grid-template-columns:1fr}
+  .block{grid-template-columns:1fr}
+  .block .idx{flex-direction:row;justify-content:flex-start;padding:12px 18px;gap:10px}
+  .block .cols{grid-template-columns:1fr}
+  .bar-row{grid-template-columns:1fr 60px}
+  .bar-row .track{grid-column:1/-1;grid-row:2}
+  .perc .ev{grid-template-columns:1fr}
+  .mast-meta{display:none}
+  .mast::after,.mast::before{display:none}
+  .mod{padding:22px}
+  .brands .ad{display:none}
+}
+@media print{.nav,#gate{display:none!important}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<div id="gate">
+  <div class="box">
+    <div class="brands">
+      <img class="sh" src="img/santa-helena.png" alt="Santa Helena">
+      <span class="bar"></span>
+      <img class="cg" src="img/cassia-branco.png" alt="Cássia Garcia Consultoria">
+    </div>
+    <div class="kick">Acesso restrito · RH</div>
+    <h2>Liderança Santa Helena</h2>
+    <p class="lead">Portal do Programa de Desenvolvimento da Liderança. Digite o código de acesso que você recebeu junto com este link.</p>
+    <form id="gate-form">
+      <label for="gate-code" class="sr">Código de acesso</label>
+      <input id="gate-code" type="password" autocomplete="off" placeholder="Código de acesso" autocapitalize="none" spellcheck="false">
+      <button type="submit">Entrar</button>
+    </form>
+    <p class="msg" id="gate-msg" role="status"></p>
+    <p class="foot">Este portal reúne informações, resultados e materiais do programa de liderança e é de uso interno do RH da Santa Helena. Em caso de dúvida sobre o acesso, fale com a Cássia Garcia Consultoria.</p>
+  </div>
+</div>
+
+<div id="site" hidden>
+<header class="mast">
+  <div class="wrap">
+    <div class="mast-top">
+      <div class="brands">
+        <img class="sh" src="img/santa-helena.png" alt="Santa Helena">
+        <span class="bar"></span>
+        <img class="cg" src="img/cassia-branco.png" alt="Cássia Garcia Consultoria">
+        <img class="ad" src="img/ana-do-rh-branco.png" alt="Ana do RH">
+      </div>
+      <div class="mast-meta">Programa de Desenvolvimento da Liderança<br>Liderança operacional · Safra 2026</div>
+    </div>
+    <div class="hero">
+      <div class="kicker">Portal do RH</div>
+      <h1>Liderança Santa Helena</h1>
+      <p>Tudo o que aconteceu nos dois módulos do Programa de Desenvolvimento da Liderança, em um só lugar: estrutura dos encontros, perfil do grupo, resultados das pesquisas, percepções da facilitação e todo o material para download.</p>
+      <dl class="facts">
+        <div><dt>Módulos</dt><dd>2 · Líder de Si e Líder dos Outros</dd></div>
+        <div><dt>Formato</dt><dd>Presencial · 8h por turma</dd></div>
+        <div><dt>Turmas</dt><dd>4 por módulo · ~30 líderes</dd></div>
+        <div><dt>Facilitação</dt><dd>Cássia Garcia</dd></div>
+      </dl>
+    </div>
+  </div>
+</header>
+
+<nav class="nav" aria-label="Seções do portal">
+  <div class="wrap" role="tablist">
+    <button role="tab" data-v="visao" aria-selected="true">Visão geral</button>
+    <button role="tab" data-v="modulo-1" aria-selected="false"><span class="num">M1</span>Líder de Si</button>
+    <button role="tab" data-v="perfil" aria-selected="false"><span class="num">M1</span>Perfil da liderança</button>
+    <button role="tab" data-v="modulo-2" aria-selected="false"><span class="num">M2</span>Líder dos Outros</button>
+    <button role="tab" data-v="pesquisa" aria-selected="false"><span class="num">M2</span>Pesquisa</button>
+    <button role="tab" data-v="percepcoes" aria-selected="false"><span class="num">M2</span>Percepções</button>
+    <button role="tab" data-v="materiais" aria-selected="false">Materiais</button>
+  </div>
+</nav>
+
+<main>
+<div class="wrap">
+
+<!-- ================= VISÃO GERAL ================= -->
+<div class="view" id="v-visao">
+  <div class="vhead">
+    <div>
+      <div class="kick-dark">Visão geral</div>
+      <h2>Do líder de si ao líder dos outros</h2>
+      <p>O programa foi desenhado para a liderança operacional da Santa Helena em dois movimentos. Primeiro, olhar para dentro: autoconhecimento, perfil e responsabilidade pelo próprio papel. Depois, olhar para a equipe: comunicar, dar feedback, desenvolver pessoas, mediar conflitos e entregar resultado.</p>
+    </div>
+  </div>
+
+  <div class="grid g2">
+    <div class="mod">
+      <span class="num">01</span>
+      <div class="tag">Módulo I</div>
+      <h3>Líder de Si</h3>
+      <p class="tl">Liderar começa por liderar a si mesmo.</p>
+      <div class="chips"><span>Autoconhecimento</span><span>Crenças limitantes</span><span>Perfil comportamental</span><span>Inteligência emocional</span><span>Autorresponsabilidade</span><span>Papel do líder</span><span>Competências da liderança</span></div>
+      <div class="go"><button data-goto="modulo-1">Ver o Módulo I →</button></div>
+    </div>
+    <div class="mod two">
+      <span class="num">02</span>
+      <div class="tag">Módulo II · 20 a 23 de outubro de 2026</div>
+      <h3>Líder dos Outros</h3>
+      <p class="tl">Liderança que conecta e entrega.</p>
+      <div class="chips"><span>Comunicação</span><span>Feedback</span><span>Relacionamento</span><span>Líder coach</span><span>Gestão de conflitos</span><span>Gestão de resultados</span></div>
+      <div class="go"><button data-goto="modulo-2">Ver o Módulo II →</button></div>
+    </div>
+  </div>
+
+  <section>
+    <h3>Os números do programa</h3>
+    <p class="sub">Indicadores de participação e de reação dos dois módulos.</p>
+    <div class="grid g4">
+      <div class="stat"><div class="v">8</div><div class="l">turmas realizadas</div><div class="d">4 no Módulo I e 4 no Módulo II</div></div>
+      <div class="stat"><div class="v">16<small>h</small></div><div class="l">de formação no programa</div><div class="d">8h presenciais em cada módulo</div></div>
+      <div class="stat o"><div class="v">98</div><div class="l">NPS do Módulo I</div><div class="d">Avaliação de reação do treinamento</div></div>
+      <div class="stat o"><div class="v">97</div><div class="l">NPS do Módulo II</div><div class="d">116 respostas · nota média 9,8</div></div>
+    </div>
+  </section>
+
+  <section>
+    <h3>O fio que conecta os dois módulos</h3>
+    <p class="sub">Três pontos apareceram no Módulo I e voltaram com força no Módulo II. São eles que pedem acompanhamento do RH daqui para frente.</p>
+    <div class="grid g3">
+      <div class="card"><h4>Conflitos encobertos</h4><p>O perfil do grupo, mais relacional e avesso a atrito, tende a evitar o confronto. Sem uma cultura de feedback, os conflitos ficam velados e desgastam os relacionamentos.</p></div>
+      <div class="card"><h4>Esforço não é resultado</h4><p>A liderança ainda mede o trabalho pela tarefa feita e pelo empenho colocado, e tem pouco domínio dos indicadores e das metas da própria área.</p></div>
+      <div class="card"><h4>Resposta pronta × autonomia</h4><p>Predomina o modelo tradicional, em que o líder dá a solução. Desenvolver pessoas e delegar com autonomia ainda é um desafio.</p></div>
+    </div>
+    <p class="note">Detalhes em <a href="#perfil" data-goto="perfil">Perfil da liderança</a> e <a href="#percepcoes" data-goto="percepcoes">Percepções da facilitadora</a>.</p>
+  </section>
+</div>
+
+<!-- ================= MÓDULO I ================= -->
+<div class="view" id="v-modulo-1" hidden>
+  <div class="vhead">
+    <div>
+      <div class="kick-dark">Módulo I</div>
+      <h2>Líder de Si</h2>
+      <p>Um dia inteiro dedicado ao líder como pessoa: quem ele é, como reage, como é percebido e o que a Santa Helena espera do seu papel. A metodologia foi prática, com atividades de interação, cases e games.</p>
+    </div>
+    <span class="badge o">NPS 98</span>
+  </div>
+
+  <div class="grid g4">
+    <div class="stat"><div class="v">4</div><div class="l">turmas</div><div class="d">Liderança operacional de diversas áreas</div></div>
+    <div class="stat"><div class="v">~30</div><div class="l">participantes por turma</div><div class="d">Participação e interação dentro do esperado</div></div>
+    <div class="stat"><div class="v">8<small>h</small></div><div class="l">de carga horária</div><div class="d">Presencial, por turma</div></div>
+    <div class="stat o"><div class="v">98</div><div class="l">NPS</div><div class="d">Avaliação de reação</div></div>
+  </div>
+
+  <section>
+    <h3>Temas e atividades</h3>
+    <p class="sub">Os sete temas do módulo e as principais atividades usadas para trabalhar cada um.</p>
+    <div class="grid g3">
+      <div class="card"><h4>Autoconhecimento</h4><p>Valores, habilidades e interesses. Identificar padrões de pensamento, fortalezas, fraquezas e gatilhos.</p><ul><li>Quem sou eu?</li><li>Como o outro me vê? · Janela de Johari</li></ul></div>
+      <div class="card"><h4>Crenças limitantes</h4><p>Reconhecer as frases que travam o crescimento próprio e o da equipe, e como desconstruí-las.</p><ul><li>Mural de crenças</li><li>Encare, questione, identifique, mude de perspectiva</li></ul></div>
+      <div class="card"><h4>Perfil comportamental</h4><p>Teste de perfil com os quatro estilos: Tubarão, Águia, Lobo e Gato.</p><ul><li>Trabalho em grupos por perfil</li><li>Relatório estratégico sobre mim</li></ul></div>
+      <div class="card"><h4>Inteligência emocional</h4><p>Os cinco pilares: autoconhecimento, autogestão, automotivação, empatia e habilidade social.</p><ul><li>Diferença entre autocontrole e passividade</li></ul></div>
+      <div class="card"><h4>Autorresponsabilidade</h4><p>Lócus de controle interno e externo: assumir a responsabilidade pelas escolhas e pelos resultados.</p><ul><li>Você já virou a chave do operacional para a liderança?</li></ul></div>
+      <div class="card"><h4>Papel do líder e competências</h4><p>O que significa liderar na Santa Helena e quais competências sustentam esse papel.</p><ul><li>Complete a frase: Liderar é…</li><li>Ônus e bônus da liderança</li><li>Papéis e responsabilidades</li><li>Autoavaliação de competências</li></ul></div>
+    </div>
+  </section>
+
+  <section>
+    <h3>Ônus e bônus de liderar na Santa Helena</h3>
+    <p class="sub">Levantados em consenso pelos grupos, formados por líderes de áreas diferentes.</p>
+    <div class="grid g2">
+      <div class="card tint"><h4 style="color:var(--green)">Bônus</h4><ul><li>Salários</li><li>Oportunidades de carreira</li><li>Reconhecimento e visibilidade</li><li>Acesso aos superiores</li><li>Treinamentos</li><li>Incentivos e prêmios</li><li>Autonomia</li></ul></div>
+      <div class="card otint"><h4 style="color:var(--orange-d)">Ônus</h4><ul><li>Cobranças por resultados, às vezes sem recursos</li><li>Sobrecarga de trabalho</li><li>Cobranças por telefone nas folgas e no horário de descanso</li><li>Comunicação atrasada</li><li>Falta de sinergia entre setores</li><li>Processos engessados atrapalham a tomada de decisão</li></ul></div>
+    </div>
+  </section>
+
+  <section>
+    <h3>Papéis e responsabilidades da liderança</h3>
+    <p class="sub">Os doze papéis discutidos com o grupo. Os destacados precisam ser mais explorados e pedem orientação e acompanhamento.</p>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>Papel</th><th>O que se observou</th></tr></thead>
+        <tbody>
+          <tr><td>Formar equipe <span class="badge o" style="margin-left:6px">atenção</span></td><td>Alguns líderes não participam das entrevistas de contratação dos seus liderados.</td></tr>
+          <tr><td>Comunicar, atualizar e dar feedback <span class="badge o" style="margin-left:6px">atenção</span></td><td>Não há um padrão de desdobramento de informações, o que deixa a liderança operacional vulnerável.</td></tr>
+          <tr><td>Avaliar desempenho e potencial <span class="badge o" style="margin-left:6px">atenção</span></td><td>É preciso reforçar com a liderança operacional que esforço não é resultado.</td></tr>
+          <tr><td>Zelar pelos padrões, procedimentos e qualidade <span class="badge o" style="margin-left:6px">atenção</span></td><td>Há poucas evidências de que este nível analise e sugira mudanças nos padrões de trabalho da equipe. “Segue-se o que sempre foi feito.”</td></tr>
+          <tr><td>Gerir e desdobrar metas e indicadores <span class="badge o" style="margin-left:6px">atenção</span></td><td>Baixo envolvimento e conhecimento sobre os indicadores da área, do setor e da empresa.</td></tr>
+          <tr><td>Demais papéis</td><td>Integrar pessoas · Treinar e desenvolver pessoas · Cuidar do clima da área · Zelar pela segurança das pessoas · Reconhecer e disciplinar pessoas · Prover recursos necessários · Promover e desligar com justiça.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</div>
+
+<!-- ================= PERFIL ================= -->
+<div class="view" id="v-perfil" hidden>
+  <div class="vhead">
+    <div>
+      <div class="kick-dark">Módulo I · Relatório</div>
+      <h2>Perfil da liderança operacional</h2>
+      <p>Leitura do grupo a partir do teste de perfil comportamental aplicado no Módulo I. Resultados individuais não são exibidos neste portal.</p>
+    </div>
+  </div>
+
+  <div class="grid g4">
+    <div class="animal"><div class="q" style="color:var(--green)">Maioria</div><h4>Lobo</h4><p>Analítico, organizado, conservador. Controle, padrão e segurança.</p><div class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div></div>
+    <div class="animal"><div class="q" style="color:var(--green)">Muitos</div><h4>Gato</h4><p>Relacional, comunicativo, harmônico. Relacionamento, clima e comunicação.</p><div class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div></div>
+    <div class="animal"><div class="q" style="color:var(--orange-d)">Poucos</div><h4>Tubarão</h4><p>Execução e pressão por resultado. Ação, velocidade e resultado.</p><div class="dots"><i class="on"></i><i></i><i></i><i></i></div></div>
+    <div class="animal"><div class="q" style="color:var(--red)">Quase nenhum</div><h4>Águia</h4><p>Visão, inovação e estratégia. Leitura de cenário e futuro.</p><div class="dots"><i></i><i></i><i></i><i></i></div></div>
+  </div>
+
+  <section>
+    <p class="pull">Uma liderança preparada para sustentar a operação, mas com desafios para impulsionar mudanças.</p>
+    <p class="sub" style="margin-top:14px">O contexto das usinas em 2026 combina pressão por eficiência e custo, automação e digitalização, ESG, gestão de pessoas mais complexa e dificuldade de formar sucessores. Não basta rodar bem a operação: é preciso pensar, adaptar e evoluir o negócio.</p>
+  </section>
+
+  <section>
+    <div class="grid g2">
+      <div class="card tint"><h4 style="color:var(--green)">Forças</h4><ul>
+        <li>Baixo risco e confiabilidade operacional</li>
+        <li>Cumprimento de normas (muitas vezes as próprias, construídas na prática e na história da área)</li>
+        <li>Forte aderência a processos: segue o combinado</li>
+        <li>Grande preocupação com os erros</li>
+        <li>Menos conflitos destrutivos</li>
+        <li>Liderança mais próxima da equipe</li>
+        <li>Mais segurança psicológica: os Gatos ajudam com escuta e acolhimento</li></ul></div>
+      <div class="card otint"><h4 style="color:var(--orange-d)">Riscos e limitações</h4><ul>
+        <li>Tendência a preservar o que já funciona</li>
+        <li>Conflitos velados e encobertos</li>
+        <li>Pode travar a inovação e a evolução</li>
+        <li>Ênfase na tarefa e no esforço, não no resultado</li>
+        <li>Poucos Tubarões: quem cobra é visto como agressivo</li>
+        <li>Poucas Águias: pouca leitura do cenário futuro</li>
+        <li>Muita análise e busca de consenso, com baixa agilidade na decisão</li>
+        <li>“Sempre foi assim”: pouca provocação</li></ul></div>
+    </div>
+  </section>
+
+  <section>
+    <h3>Direcionamento para o RH</h3>
+    <p class="sub">Não se trata de mudar o perfil das pessoas, e sim de equilibrar o sistema de liderança: desenvolver competências complementares, ter as pessoas certas nos lugares certos, criar exposição a outros perfis e ajustar o ambiente e as exigências.</p>
+    <div class="grid g2">
+      <div class="card"><span class="badge">Prioridade 1</span><h4 style="margin-top:10px">Visão e pensamento estratégico</h4><p>Pensamento sistêmico, decisão em cenários complexos, leitura de negócio, indicadores estratégicos, estudos de caso da própria usina e discussões de cenário (“e se…”).</p></div>
+      <div class="card"><span class="badge">Prioridade 2</span><h4 style="margin-top:10px">Orientação a resultado e velocidade</h4><p>Gestão por metas e indicadores, accountability, decisão com informação incompleta, definição de prioridades, rituais de performance e metas desafiadoras com acompanhamento.</p></div>
+      <div class="card"><span class="badge o">Essencial</span><h4 style="margin-top:10px">Gestão da mudança</h4><p>Mindset de crescimento, adaptabilidade, quebra de paradigmas, vieses e liderança em transformação.</p></div>
+      <div class="card"><span class="badge o">Essencial</span><h4 style="margin-top:10px">Líder como formador de pessoas</h4><p>Feedback, conversas difíceis, delegação eficaz e formação de sucessores, mentoria e engajamento.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h3>Intervenções práticas</h3>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>Ação</th><th>Como</th></tr></thead>
+        <tbody>
+          <tr><td>1. Buscar apoio e patrocínio</td><td>Entender o perfil de liderança que a empresa deseja, conscientizar a alta gestão sobre o cenário e o plano, conseguir apoio para as mudanças e preparar a liderança tática para as mudanças de comportamento da liderança operacional.</td></tr>
+          <tr><td>2. Misturar perfis nos times</td><td>Colocar líderes mais “Tubarão” e “Águia” em posições-chave.</td></tr>
+          <tr><td>3. Criar desafios fora da zona de conforto</td><td>Projetos de melhoria, grupos de inovação e rotação entre áreas.</td></tr>
+          <tr><td>4. Rever critérios de promoção</td><td>Não considerar apenas tempo de casa, esforço e domínio técnico. Incluir visão, decisão e resultado.</td></tr>
+          <tr><td>5. Ajustar a cultura</td><td>Sair do “não pode errar” para o “pode testar com responsabilidade”.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="pull" style="margin-top:30px">Foram promovidos para garantir que a operação funcione… mas agora precisam garantir que ela evolua.</p>
+  </section>
+</div>
+
+<!-- ================= MÓDULO II ================= -->
+<div class="view" id="v-modulo-2" hidden>
+  <div class="vhead">
+    <div>
+      <div class="kick-dark">Módulo II · 20 a 23 de outubro de 2026</div>
+      <h2>Líder dos Outros</h2>
+      <p>“Liderança que Conecta e Entrega.” Seis temas em um dia, cada um com conceito curto, ferramenta prática e atividade aplicada à rotina da usina, com casos de Colheita, Plantio, Tratos Culturais, Manutenção Automotiva, Logística, Indústria, SSMA, RH e Facilities.</p>
+    </div>
+    <span class="badge o">NPS 97</span>
+  </div>
+
+  <div class="grid g4">
+    <div class="stat"><div class="v">4</div><div class="l">turmas</div><div class="d">Uma por dia, de 20 a 23/10</div></div>
+    <div class="stat"><div class="v">116</div><div class="l">respostas na pesquisa</div><div class="d">Avaliação de reação ao final do dia</div></div>
+    <div class="stat"><div class="v">6</div><div class="l">temas</div><div class="d">Com ferramenta e atividade em cada um</div></div>
+    <div class="stat"><div class="v">12</div><div class="l">questões no pós-teste</div><div class="d">Mais um quiz relâmpago com 12 perguntas</div></div>
+  </div>
+
+  <section>
+    <div class="grid" style="grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:28px;align-items:start">
+      <div>
+        <h3 style="font-size:1.35rem">Agenda do dia</h3>
+        <p class="sub" style="margin:6px 0 20px">Das 7h às 17h, com intervalos.</p>
+        <ol class="agenda">
+          <li><div class="t">07h00 – 07h40</div><div class="n">Abertura, acordos e pré-teste</div></li>
+          <li><div class="t">07h40 – 09h15</div><div class="n">01 · Comunicação</div></li>
+          <li class="brk"><div class="t">09h15 – 09h30</div><div class="n">Coffee break</div></li>
+          <li><div class="t">09h30 – 10h30</div><div class="n">02 · Feedback</div></li>
+          <li><div class="t">10h30 – 11h00</div><div class="n">03 · Relacionamento</div></li>
+          <li class="brk"><div class="t">11h00 – 13h00</div><div class="n">Almoço</div></li>
+          <li><div class="t">13h00 – 14h00</div><div class="n">04 · Líder coach</div></li>
+          <li><div class="t">14h00 – 15h00</div><div class="n">05 · Gestão de conflitos</div></li>
+          <li class="brk"><div class="t">15h00 – 15h15</div><div class="n">Coffee break</div></li>
+          <li><div class="t">15h15 – 16h15</div><div class="n">06 · Gestão de resultados</div></li>
+          <li><div class="t">16h15 – 17h00</div><div class="n">Pós-teste, compromisso e encerramento</div></li>
+        </ol>
+      </div>
+      <div>
+        <h3 style="font-size:1.35rem">Recursos que atravessam o dia</h3>
+        <p class="sub" style="margin:6px 0 20px">Para que o aprendizado vire prática no primeiro mês.</p>
+        <div class="grid g2">
+          <div class="card"><h4>Kit do Participante</h4><p>Caderno com cases, autodiagnósticos, checklists, cartas de role play e pré/pós-teste.</p></div>
+          <div class="card"><h4>Diário de Bordo</h4><p>Ao final de cada bloco, o líder registra 1 insight e 1 ação: o que vai fazer diferente, com quem e quando.</p></div>
+          <div class="card"><h4>Pré e pós-teste</h4><p>12 questões individuais, sem consulta, para medir a apropriação dos conceitos.</p></div>
+          <div class="card"><h4>Quiz “Safra de Líderes”</h4><p>12 perguntas relâmpago, de 30 segundos cada, com situações reais da operação.</p></div>
+          <div class="card green" style="grid-column:1/-1"><h4>Compromisso de Liderança · 30 dias</h4><p>Cada líder escolhe 3 ações do Diário de Bordo e define o quê, com quem, quando e qual evidência vai mostrar que funcionou.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h3>Os seis temas</h3>
+    <p class="sub">Mensagem central, ferramentas e atividades de cada bloco.</p>
+
+    <div class="block"><div class="idx"><b>01</b><small>7h40<br>9h15</small></div><div class="body">
+      <h4>Comunicação</h4><p class="msg">Ordem dada pode ser diferente de ordem entendida: clareza, escuta e confirmação.</p>
+      <div class="cols"><div><h5>Conceitos e ferramentas</h5><ul><li>Como a comunicação acontece e os ruídos físicos, semânticos e psicológicos</li><li>Estilos: passivo, agressivo, passivo-agressivo e assertivo</li><li>Escuta ativa em quatro níveis</li><li>Circuito fechado: emite, repete, confirma</li><li>Checklist da orientação clara: o quê, por quê, como, quando e quem</li></ul></div>
+      <div><h5>Atividades</h5><ul><li>Dinâmica “Sigam minha orientação”</li><li>Autoavaliação: como está a minha escuta?</li><li>Case “A troca de turno que virou boato”</li></ul></div></div>
+    </div></div>
+
+    <div class="block"><div class="idx"><b>02</b><small>9h30<br>10h30</small></div><div class="body">
+      <h4>Feedback</h4><p class="msg">Reconhecer, corrigir e desenvolver, com clareza e respeito.</p>
+      <div class="cols"><div><h5>Conceitos e ferramentas</h5><ul><li>Três tipos: reconhecimento, corretivo e desenvolvimento (feedforward)</li><li>Os 7 erros mais comuns no feedback</li><li>Modelo SCI+A: Situação, Comportamento, Impacto e Acordo</li><li>O líder também pede feedback: começar, parar, continuar</li></ul></div>
+      <div><h5>Atividades</h5><ul><li>Role play em trios (líder, liderado e observador) com 8 cartas de situações, uma por área</li><li>Checklist do observador</li></ul></div></div>
+    </div></div>
+
+    <div class="block"><div class="idx"><b>03</b><small>10h30<br>11h</small></div><div class="body">
+      <h4>Relacionamento</h4><p class="msg">Confiança se constrói em pequenos depósitos, todos os dias.</p>
+      <div class="cols"><div><h5>Conceitos e ferramentas</h5><ul><li>Equação da confiança: credibilidade, confiabilidade e intimidade, divididas pelo autointeresse</li><li>Segurança psicológica: respeito com exigência</li><li>Conta Corrente Emocional: depósitos e saques</li></ul></div>
+      <div><h5>Atividades</h5><ul><li>Fila Silenciosa (ativação)</li><li>Mapa de Relacionamentos do Líder</li><li>Matriz de Interfaces entre as áreas</li></ul></div></div>
+    </div></div>
+
+    <div class="block"><div class="idx"><b>04</b><small>13h<br>14h</small></div><div class="body">
+      <h4>Líder coach</h4><p class="msg">Menos respostas prontas, mais perguntas que desenvolvem.</p>
+      <div class="cols"><div><h5>Conceitos e ferramentas</h5><ul><li>Chefe × líder coach</li><li>Modelo GROW: objetivo, realidade, opções e vontade</li><li>Perguntas abertas (o quê, como, qual) e o cuidado com o “por quê?”</li><li>Diretivo em segurança e emergências; coach no desenvolvimento</li></ul></div>
+      <div><h5>Atividades</h5><ul><li>Aquecimento: da pergunta fechada à aberta</li><li>Role play GROW em trios, com 5 cartas de coaching</li></ul></div></div>
+    </div></div>
+
+    <div class="block"><div class="idx"><b>05</b><small>14h<br>15h</small></div><div class="body">
+      <h4>Gestão de conflitos</h4><p class="msg">Divergência bem conduzida gera solução; mal conduzida vira guerra.</p>
+      <div class="cols"><div><h5>Conceitos e ferramentas</h5><ul><li>Cinco estilos: competir, colaborar, conciliar, evitar e acomodar</li><li>Zonas de escalada: ganha-ganha, ganha-perde, perde-perde</li><li>Roteiro de mediação do líder em 5 passos</li><li>Posições × interesses</li></ul></div>
+      <div><h5>Atividades</h5><ul><li>Autodiagnóstico do estilo diante do conflito (15 afirmações, inspirado em Thomas &amp; Kilmann)</li></ul></div></div>
+    </div></div>
+
+    <div class="block"><div class="idx"><b>06</b><small>15h15<br>16h15</small></div><div class="body">
+      <h4>Gestão de resultados</h4><p class="msg">Meta clara, rotina de acompanhamento e pessoas comprometidas.</p>
+      <div class="cols"><div><h5>Conceitos e ferramentas</h5><ul><li>Os três pilares: pessoas, processo e gestão</li><li>Tarefa, esforço e resultado não são a mesma coisa</li><li>Metas SMART</li><li>Desdobramento: usina → área → frente/turno → pessoa</li></ul></div>
+      <div><h5>Atividades</h5><ul><li>Do objetivo vago à meta SMART, com cinco objetivos reais de Colheita, Logística, Manutenção Automotiva, Plantio e Indústria</li></ul></div></div>
+    </div></div>
+  </section>
+</div>
+
+<!-- ================= PESQUISA ================= -->
+<div class="view" id="v-pesquisa" hidden>
+  <div class="vhead">
+    <div>
+      <div class="kick-dark">Módulo II · Pesquisa de opinião</div>
+      <h2>O que os líderes disseram</h2>
+      <p>Pesquisa respondida ao final de cada turma, de 20 a 23 de outubro de 2026. Percentuais calculados sobre quem respondeu cada pergunta.</p>
+    </div>
+    <span class="badge">116 respostas</span>
+  </div>
+
+  <div class="grid g4">
+    <div class="stat o"><div class="v">97</div><div class="l">NPS</div><div class="d">111 promotores · 3 neutros · 0 detratores</div></div>
+    <div class="stat"><div class="v">9,8</div><div class="l">nota média de recomendação</div><div class="d">De 0 a 10 · 95 notas 10</div></div>
+    <div class="stat"><div class="v">94<small>%</small></div><div class="l">avaliam o treinamento como ótimo</div><div class="d">Os demais, como bom</div></div>
+    <div class="stat"><div class="v">78<small>%</small></div><div class="l">já sabem por onde começar a aplicar</div><div class="d">Os demais vão tentar, mas acham difícil</div></div>
+  </div>
+
+  <section>
+    <div class="grid g2">
+      <div class="card">
+        <h4>Avaliação por item</h4>
+        <p>Percentual de “Ótimo”. Nenhuma resposta abaixo de “Bom”.</p>
+        <div class="bars" style="margin-top:18px">
+          <div class="bar-row"><span class="lab">Treinamento</span><div class="track"><div class="fill" style="width:93.9%"></div></div><span class="val">93,9%</span></div>
+          <div class="bar-row"><span class="lab">Facilitadoras</span><div class="track"><div class="fill" style="width:93%"></div></div><span class="val">93,0%</span></div>
+          <div class="bar-row"><span class="lab">Material e atividades</span><div class="track"><div class="fill" style="width:81.6%"></div></div><span class="val">81,6%</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <h4>Notas de recomendação</h4>
+        <p>“De 0 a 10, o quanto você recomendaria este treinamento?” (114 notas)</p>
+        <div class="bars" style="margin-top:18px">
+          <div class="bar-row"><span class="lab">10</span><div class="track"><div class="fill" style="width:83.3%"></div></div><span class="val">95</span></div>
+          <div class="bar-row"><span class="lab">9</span><div class="track"><div class="fill" style="width:14%"></div></div><span class="val">16</span></div>
+          <div class="bar-row"><span class="lab">8</span><div class="track"><div class="fill g" style="width:1.8%"></div></div><span class="val">2</span></div>
+          <div class="bar-row"><span class="lab">7</span><div class="track"><div class="fill g" style="width:.9%"></div></div><span class="val">1</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h3>Mudanças percebidas no próprio líder ao longo da safra</h3>
+    <p class="sub">“Pensando no seu líder: ao longo desta safra, você percebeu mudanças positivas em comunicação, feedback, aproximação e planejamento do seu gestor?” (114 respostas)</p>
+    <div class="card">
+      <div class="split">
+        <div style="width:68.4%;background:var(--green)">68%</div>
+        <div style="width:27.2%;background:var(--orange)">27%</div>
+        <div style="width:4.4%;background:#9AA59C;padding:0;justify-content:center">4%</div>
+      </div>
+      <div class="legend"><span><i style="background:var(--green)"></i>Sim, as mudanças estão acontecendo no dia a dia (78)</span><span><i style="background:var(--orange)"></i>Mais ou menos: alguns pontos melhoraram, outros não (31)</span><span><i style="background:#9AA59C"></i>Não percebi mudança positiva (5)</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h3>Temas que querem aprofundar</h3>
+    <p class="sub">Cada participante podia marcar até 3 temas (113 respostas). Feedback e líder coach empatam no topo, e são justamente dois dos pontos de atenção da facilitação.</p>
+    <div class="card">
+      <div class="bars">
+        <div class="bar-row"><span class="lab">Feedback</span><div class="track"><div class="fill o" style="width:49%"></div></div><span class="val">55 <small>49%</small></span></div>
+        <div class="bar-row"><span class="lab">Líder coach</span><div class="track"><div class="fill o" style="width:49%"></div></div><span class="val">55 <small>49%</small></span></div>
+        <div class="bar-row"><span class="lab">Gestão de conflitos</span><div class="track"><div class="fill o" style="width:43%"></div></div><span class="val">49 <small>43%</small></span></div>
+        <div class="bar-row"><span class="lab">Comunicação</span><div class="track"><div class="fill" style="width:42%"></div></div><span class="val">47 <small>42%</small></span></div>
+        <div class="bar-row"><span class="lab">Autoconhecimento</span><div class="track"><div class="fill" style="width:32%"></div></div><span class="val">36 <small>32%</small></span></div>
+        <div class="bar-row"><span class="lab">Inteligência emocional</span><div class="track"><div class="fill" style="width:29%"></div></div><span class="val">33 <small>29%</small></span></div>
+        <div class="bar-row"><span class="lab">Gestão de performance e metas</span><div class="track"><div class="fill" style="width:29%"></div></div><span class="val">33 <small>29%</small></span></div>
+        <div class="bar-row"><span class="lab">Relacionamento no trabalho</span><div class="track"><div class="fill" style="width:26%"></div></div><span class="val">29 <small>26%</small></span></div>
+        <div class="bar-row"><span class="lab">Papel do líder</span><div class="track"><div class="fill" style="width:19%"></div></div><span class="val">22 <small>19%</small></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h3>O que a liderança precisa e o treinamento não resolve</h3>
+    <p class="sub">Leitura das respostas abertas, agrupadas por tema. Boa parte dos participantes não apontou necessidade ou reforçou que o treinamento já ajuda; entre os que apontaram, estes foram os temas recorrentes.</p>
+    <div class="grid g3">
+      <div class="card"><h4>Tempo</h4><p>Falta de tempo na rotina, sobretudo nas trocas de turno, para colocar em prática o que foi aprendido.</p></div>
+      <div class="card"><h4>Apoio e integração da gestão</h4><p>Apoio da diretoria à supervisão em torno de um propósito comum, mais cooperação entre líderes e proximidade com o RH no dia a dia.</p></div>
+      <div class="card"><h4>Comunicação e feedback de cima</h4><p>Receber mais feedback e informação dos superiores, e conversar mais.</p></div>
+      <div class="card"><h4>Apoio emocional</h4><p>Saúde mental do líder, apoio psicológico e segurança psicológica para decidir e agir.</p></div>
+      <div class="card"><h4>Quadro de pessoas</h4><p>Falta de colaboradores em alguns setores, rotatividade de operadores e as mudanças de perfil da nova geração.</p></div>
+      <div class="card"><h4>Postura individual</h4><p>Atitude, disciplina, vontade de aprender e a percepção de que a mudança começa em cada um.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h3>Comentários selecionados</h3>
+    <p class="sub">Trechos dos comentários livres, sem identificação. Os destacados trazem sugestões.</p>
+    <div class="quotes">
+      <div class="quote"><p>Treinamento muito dinâmico, apesar de ser várias horas, nem deu pra ver o tempo passar.</p></div>
+      <div class="quote"><p>Ótimo treinamento, com ferramentas que eu sinceramente não conhecia, e acredito que vai facilitar muito meu dia a dia na empresa.</p></div>
+      <div class="quote crit"><p>Ter mais vezes durante o ano para todos.</p><div class="who">Sugestão</div></div>
+      <div class="quote"><p>O treinamento traz uma ampla dimensão de quanto o papel do líder é importante dentro de uma empresa e o quanto isso impacta nos resultados.</p></div>
+      <div class="quote"><p>Meu primeiro treinamento. Muito aprendizado adquirido, obrigado.</p></div>
+      <div class="quote crit"><p>As vezes precisamos de mentorias para melhorar como lideres e pessoas.</p><div class="who">Sugestão</div></div>
+      <div class="quote"><p>O treinamento é excelente, esclarecedor e enriquecedor. Amplia a visão de quem já tem familiaridade com os temas e traz luz a quem está tendo contato pela primeira vez.</p></div>
+      <div class="quote crit"><p>Aconselho este treinamento a cada seis meses para atualizar os prós e contras.</p><div class="who">Sugestão</div></div>
+      <div class="quote"><p>Gostei muito do treinamento, da metodologia, das dinâmicas… sinto que saio daqui hoje com uma evolução (que colocarei em prática).</p></div>
+      <div class="quote crit"><p>O módulo 2 teve material, o módulo 1 teve só uma folha.</p><div class="who">Observação</div></div>
+      <div class="quote"><p>Muito interessante e fundamental para a liderança no dia a dia, com certeza vai gerar impacto positivo na empresa.</p></div>
+      <div class="quote"><p>Gostei muito do treinamento, pois foi conduzido com muito respeito.</p></div>
+    </div>
+  </section>
+</div>
+
+<!-- ================= PERCEPÇÕES ================= -->
+<div class="view" id="v-percepcoes" hidden>
+  <div class="vhead">
+    <div>
+      <div class="kick-dark">Módulo II · Facilitação</div>
+      <h2>Percepções da facilitadora</h2>
+      <p>O que se observou nas quatro turmas, tema a tema, e como isso se conecta ao diagnóstico do Módulo I e ao que os próprios líderes disseram na pesquisa.</p>
+    </div>
+  </div>
+
+  <div class="perc">
+    <div class="side"><div class="tag">Ponto de atenção 1</div><h4>Feedback</h4><div class="lvl">Leitura<b>Não existe uma cultura de feedback</b></div></div>
+    <div class="main">
+      <p>As ações de feedback na Santa Helena ainda são muito tímidas. Os líderes têm a concepção de que feedback só pode ser <strong>de cima para baixo</strong> e não se veem com liberdade para dar feedback aos pares ou aos próprios líderes.</p>
+      <div class="ev">
+        <div class="m1"><b>No Módulo I</b>“Comunicar, atualizar e dar feedback” já apareceu entre os papéis que pedem orientação e acompanhamento.</div>
+        <div class="ps"><b>Na pesquisa</b>Feedback é o tema que os líderes mais querem aprofundar (49%), e “feedback dos superiores” aparece entre as necessidades citadas.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="perc">
+    <div class="side"><div class="tag">Ponto de atenção 2</div><h4>Gestão de conflitos</h4><div class="lvl">Leitura<b>Conflitos encobertos</b></div></div>
+    <div class="main">
+      <p>A dificuldade com o feedback faz com que alguns conflitos fiquem encobertos, e isso pode prejudicar os relacionamentos entre as pessoas e entre as áreas.</p>
+      <div class="ev">
+        <div class="m1"><b>No Módulo I</b>O perfil do grupo indicava “conflitos velados e encobertos” e “quem cobra é visto como agressivo”.</div>
+        <div class="ps"><b>Na pesquisa</b>Gestão de conflitos é o terceiro tema mais pedido (43%).</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="perc">
+    <div class="side"><div class="tag">Ponto de atenção 3</div><h4>Líder coach</h4><div class="lvl">Leitura<b>Ainda prevalece a resposta pronta</b></div></div>
+    <div class="main">
+      <p>Ainda existe muito da liderança tradicional, de achar que o líder tem que dar a resposta pronta. Os líderes têm dificuldade de desenvolver os liderados e de dar mais autonomia a eles.</p>
+      <div class="ev">
+        <div class="m1"><b>No Módulo I</b>O relatório já recomendava fortalecer o líder como formador de pessoas: delegação, mentoria e formação de sucessores.</div>
+        <div class="ps"><b>Na pesquisa</b>Líder coach empata com feedback como o tema mais desejado (49%).</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="perc">
+    <div class="side"><div class="tag">Ponto de atenção 4</div><h4>Gestão por resultados</h4><div class="lvl">Leitura<b>Foco em tarefa e esforço</b></div></div>
+    <div class="main">
+      <p>Trabalhamos a diferença entre tarefa, esforço e resultado. Percebe-se um foco grande em tarefa e esforço e uma dificuldade da liderança em traduzir para a própria equipe <strong>no que aquela tarefa e aquele esforço vão resultar</strong>, fazendo a ligação com os indicadores das áreas.</p>
+      <p>Esse é também um ponto de atenção porque os líderes não demonstram muito domínio sobre os indicadores e as metas da área.</p>
+      <div class="ev">
+        <div class="m1"><b>No Módulo I</b>“Esforço não é resultado” e “baixo envolvimento e conhecimento sobre os indicadores” já haviam sido apontados.</div>
+        <div class="ps"><b>Na pesquisa</b>29% querem aprofundar gestão de performance e metas.</div>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <h3>Sugestões de continuidade para o RH</h3>
+    <p class="sub">Caminhos para sustentar o que foi trabalhado, a partir das percepções acima, do diagnóstico do Módulo I e da pesquisa.</p>
+    <div class="grid g2">
+      <div class="card"><h4>Abrir o feedback em todas as direções</h4><p>Criar momentos estruturados de feedback entre pares e de liderado para líder (por exemplo, o “começar, parar, continuar” usado no módulo), começando pela liderança tática, que dá o exemplo ao pedir feedback.</p></div>
+      <div class="card"><h4>Tratar conflitos cedo</h4><p>Apoiar os líderes na mediação dos conflitos entre áreas de interface, usando o roteiro de mediação, antes que saiam da zona da conversa e virem crise.</p></div>
+      <div class="card"><h4>Conversas de desenvolvimento</h4><p>Incluir o GROW nas conversas individuais e nas avaliações de desempenho, para que o líder pratique desenvolver em vez de responder.</p></div>
+      <div class="card"><h4>Indicadores na mão do líder</h4><p>Apresentar à liderança operacional os indicadores e metas de cada área, com o desdobramento até a frente e o turno, e criar um ritual simples de acompanhamento com a equipe.</p></div>
+      <div class="card"><h4>Acompanhar o Compromisso de 30 dias</h4><p>Retomar com cada gestor as três ações assumidas no encerramento do módulo e registrar as evidências.</p></div>
+      <div class="card"><h4>Olhar para o que o treinamento não resolve</h4><p>Tempo nas trocas de turno, apoio emocional ao líder e quadro de pessoal apareceram na pesquisa e dependem de decisões da gestão.</p></div>
+    </div>
+  </section>
+</div>
+
+<!-- ================= MATERIAIS ================= -->
+<div class="view" id="v-materiais" hidden>
+  <div class="vhead">
+    <div>
+      <div class="kick-dark">Materiais para download</div>
+      <h2>Materiais e relatórios</h2>
+      <p>Todo o material aplicado e os relatórios do programa, em PDF.</p>
+    </div>
+  </div>
+
+  <div class="grp">Módulo I · Líder de Si</div>
+  <div class="files">
+    <a class="file" href="materiais/modulo-1-lider-de-si-material-419a29fd.pdf" target="_blank" rel="noopener"><span class="ic">PDF</span><span class="tx"><b>Material do Módulo I</b><span>Apresentação aplicada em sala · 25 páginas · 2,9 MB</span></span><span class="dl">Baixar ↓</span></a>
+    <a class="file" href="materiais/modulo-1-relatorio-perfil-da-lideranca-cf9f7b65.pdf" target="_blank" rel="noopener"><span class="ic">PDF</span><span class="tx"><b>Relatório · Perfil da Liderança</b><span>Percepções, perfil do grupo e direcionamento ao RH · 4 páginas · 4,2 MB</span></span><span class="dl">Baixar ↓</span></a>
+    <a class="file" href="materiais/modulo-1-percepcoes-da-facilitadora-1d464252.pdf" target="_blank" rel="noopener"><span class="ic">PDF</span><span class="tx"><b>Percepções da facilitadora · Módulo I</b><span>Apresentação de devolutiva ao RH · 3 páginas · 0,3 MB</span></span><span class="dl">Baixar ↓</span></a>
+  </div>
+
+  <div class="grp">Módulo II · Líder dos Outros</div>
+  <div class="files">
+    <a class="file" href="materiais/modulo-2-lider-dos-outros-material-7574e938.pdf" target="_blank" rel="noopener"><span class="ic">PDF</span><span class="tx"><b>Material do Módulo II</b><span>Apresentação aplicada em sala · 65 páginas · 1,6 MB</span></span><span class="dl">Baixar ↓</span></a>
+    <a class="file" href="materiais/modulo-2-caderno-do-facilitador-b5478004.pdf" target="_blank" rel="noopener"><span class="ic">PDF</span><span class="tx"><b>Caderno do Facilitador · Módulo II</b><span>Roteiro, atividades, gabaritos e orientações · 22 páginas · 0,5 MB</span></span><span class="dl">Baixar ↓</span></a>
+    <a class="file" href="materiais/modulo-2-relatorio-percepcoes-e-pesquisa-4ed04a75.pdf" target="_blank" rel="noopener"><span class="ic">PDF</span><span class="tx"><b>Relatório do Módulo II</b><span>Percepções da facilitadora e pesquisa de opinião · 3 páginas · 0,4 MB</span></span><span class="dl">Baixar ↓</span></a>
+  </div>
+  <p class="note">Os resultados da pesquisa de opinião estão consolidados na aba <a href="#pesquisa" data-goto="pesquisa">Pesquisa de opinião</a> e no relatório do Módulo II.</p>
+</div>
+
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="brands"><img class="cg" src="img/cassia-branco.png" alt="Cássia Garcia Consultoria"></div>
+    <div>Cássia Garcia Consultoria · cassiagarciaconsultoria@gmail.com<br>Portal de uso interno do RH da Santa Helena · Atualizado em novembro de 2026</div>
+  </div>
+</footer>
+</div>
+
+<script>
+(function(){
+  var views = ['visao','modulo-1','perfil','modulo-2','pesquisa','percepcoes','materiais'];
+  var tabs = document.querySelectorAll('.nav button');
+  function show(v, scroll){
+    if (views.indexOf(v) === -1) v = 'visao';
+    views.forEach(function(x){ document.getElementById('v-'+x).hidden = (x !== v); });
+    tabs.forEach(function(t){
+      var on = t.dataset.v === v;
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      if (on && t.scrollIntoView) { try { t.scrollIntoView({block:'nearest', inline:'center'}); } catch(e){} }
+    });
+    if (scroll) {
+      var nav = document.querySelector('.nav');
+      var y = nav.getBoundingClientRect().top + window.scrollY;
+      if (window.scrollY > y) window.scrollTo({top:y});
+    }
+  }
+  function go(v){
+    show(v, true);
+    try { if (location.hash !== '#'+v) history.replaceState(null, '', '#'+v); } catch(e){}
+  }
+  tabs.forEach(function(t){ t.addEventListener('click', function(){ go(t.dataset.v); }); });
+  document.querySelectorAll('[data-goto]').forEach(function(b){
+    b.addEventListener('click', function(e){ e.preventDefault(); go(b.dataset.goto); });
+  });
+  window.addEventListener('hashchange', function(){ show((location.hash||'').slice(1), true); });
+  show((location.hash||'').slice(1), false);
+})();
+</script>
+
+<script>
+(function(){
+  var HASH = "a2b209549b3e359b2eae1187f5e0cc5ca6e77f49aafb456c193925e2590ada09";
+  var KEY = "lsh-acesso";
+  var gate = document.getElementById('gate');
+  var site = document.getElementById('site');
+  var form = document.getElementById('gate-form');
+  var input = document.getElementById('gate-code');
+  var msg = document.getElementById('gate-msg');
+  function open_(){ gate.hidden = true; gate.style.display = 'none'; site.hidden = false; }
+  async function sha256(txt){
+    var d = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(txt));
+    return Array.prototype.map.call(new Uint8Array(d), function(b){ return b.toString(16).padStart(2,'0'); }).join('');
+  }
+  try { if (localStorage.getItem(KEY) === HASH) open_(); } catch(e){}
+  form.addEventListener('submit', async function(ev){
+    ev.preventDefault();
+    msg.textContent = '';
+    var v = (input.value || '').trim().toLowerCase();
+    if (!v) return;
+    if (!(window.crypto && crypto.subtle)) { msg.textContent = 'Este navegador não consegue validar o código. Abra o link em outro navegador.'; return; }
+    var h;
+    try { h = await sha256(v); } catch(e){ msg.textContent = 'Não foi possível validar o código agora. Tente novamente.'; return; }
+    if (h === HASH) { try { localStorage.setItem(KEY, HASH); } catch(e){} open_(); }
+    else { msg.textContent = 'Código incorreto. Confira o código enviado junto com o link.'; input.select(); }
+  });
+  if (!gate.hidden) { try { input.focus(); } catch(e){} }
+})();
+</script>
+</body>
+</html>
